@@ -23,5 +23,5 @@ You can use this repository to:
 MIT
 
 ## Contact 📧
-- LinkedIn: [Phuong Anh (Minerva) Do](https://www.linkedin.com/in/minerva-do/)
+- Leetcode: [phuonganhniie](https://leetcode.com/phuonganhniie/)
 - Email: phuonganhniie@gmail.com
