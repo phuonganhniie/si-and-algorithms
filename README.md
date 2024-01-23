@@ -1,15 +1,5 @@
 # Coding Challenges Solutions 🚀
 
-## Table of Contents 📋
-- [Coding Challenges Solutions 🚀](#coding-challenges-solutions-)
-  - [Table of Contents 📋](#table-of-contents-)
-  - [Introduction 📚](#introduction-)
-  - [Platforms Covered 🌐](#platforms-covered-)
-  - [Languages Used 💻](#languages-used-)
-  - [How to Use 🛠️](#how-to-use-️)
-  - [License 📝](#license-)
-  - [Contact 📧](#contact-)
-
 ## Introduction 📚
 Welcome to my repository where I share my solutions to various coding challenges from platforms such as LeetCode, Codility, and more. This repository serves as a personal archive of my coding journey and a resource for others who are tackling similar challenges. 😊
 
