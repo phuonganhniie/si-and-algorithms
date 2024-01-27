@@ -1,5 +1,8 @@
 from functools import cache
 
+"""
+UPDATING DOCUMENT
+"""
 class Solution:
     def kInversePairs(self, n: int, k: int) -> int:
         @cache
