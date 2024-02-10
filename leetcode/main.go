@@ -70,6 +70,11 @@ func main() {
 	// rs := leetcode.NumDifferentIntegers(word)
 	// fmt.Println(rs)
 
+	// #647
+	// s := "babad"
+	// result := leetcode_647.CountSubstrings(s)
+	// fmt.Println("Number of palindromic substrings (DP):", result)
+
 	// Others
 	// arr := []int{1, 2, 3, 4, 5}
 	// leetcode.ShiftArrayRight(arr)
