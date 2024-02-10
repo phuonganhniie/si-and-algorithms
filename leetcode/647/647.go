@@ -19,12 +19,14 @@ func CountSubstrings(s string) int {
 	fmt.Println("After counting single-character palindromes:", count)
 
 	// Debug print of the DP table after single and two-character checks
-	fmt.Println("DP table after single and two-character palindrome checks:")
-	printDPTable(dp)
+	// fmt.Println("DP table after single and two-character palindrome checks:")
+	// printDPTable(dp)
 
 	// Two character palindromes
 	for i := 0; i < n-1; i++ {
 		if s[i] == s[i+1] {
+			fmt.Println("s[i]: ", s[i])
+			fmt.Println("s[i+1]: ", s[i+1])
 			dp[i][i+1] = true
 			count++
 		}
@@ -32,8 +34,8 @@ func CountSubstrings(s string) int {
 	fmt.Println("After counting two-character palindromes:", count)
 
 	// Debug print of the DP table after single and two-character checks
-	fmt.Println("DP table after single and two-character palindrome checks:")
-	printDPTable(dp)
+	// fmt.Println("DP table after single and two-character palindrome checks:")
+	// printDPTable(dp)
 
 	// Palindromes longer than 2 characters
 	for length := 3; length <= n; length++ {
@@ -47,8 +49,8 @@ func CountSubstrings(s string) int {
 	}
 
 	// Final debug print of the complete DP table
-	fmt.Println("Final DP table:")
-	printDPTable(dp)
+	// fmt.Println("Final DP table:")
+	// printDPTable(dp)
 
 	return count
 }

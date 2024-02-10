@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+
+	leetcode_647 "github.com/phuonganhniie/leetcode/647"
+)
+
 func main() {
 	// ================ LEETCODE ====================
 	// #1 Valid Parentheses
@@ -71,9 +77,9 @@ func main() {
 	// fmt.Println(rs)
 
 	// #647
-	// s := "babad"
-	// result := leetcode_647.CountSubstrings(s)
-	// fmt.Println("Number of palindromic substrings (DP):", result)
+	s := "babad"
+	result := leetcode_647.CountSubstrings(s)
+	fmt.Println("Number of palindromic substrings (DP):", result)
 
 	// Others
 	// arr := []int{1, 2, 3, 4, 5}
