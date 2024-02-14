@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
-
-	leetcode_647 "github.com/phuonganhniie/leetcode/647"
+	leetcode_2149 "github.com/phuonganhniie/leetcode/2149"
 )
 
 func main() {
@@ -77,9 +75,13 @@ func main() {
 	// fmt.Println(rs)
 
 	// #647
-	s := "babad"
-	result := leetcode_647.CountSubstrings(s)
-	fmt.Println("Number of palindromic substrings (DP):", result)
+	// s := "babad"
+	// result := leetcode_647.CountSubstrings(s)
+	// fmt.Println("Number of palindromic substrings (DP):", result)
+
+	// #2149
+	nums := []int{3, -1, -2, -5, -2, 4}
+	_ = leetcode_2149.RearrangeArray(nums)
 
 	// Others
 	// arr := []int{1, 2, 3, 4, 5}
