@@ -17,7 +17,9 @@ Welcome to my repository where I share my solutions to various coding challenges
 ## How to Use 🛠️
 You can use this repository to:
 - Get inspiration for solving different coding challenges.
-- Learn different approaches and algorithms.
+- Reference different approaches and algorithms patterns.
+
+And I can use this repository to encourage my try to solve a freaking algorithm (because I really scared when I'm in an algorithm interview). 
 
 ## License 📝
 MIT
