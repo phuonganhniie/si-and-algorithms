@@ -1,8 +1,6 @@
 package main
 
-import (
-	leetcode_2149 "github.com/phuonganhniie/leetcode/2149"
-)
+import leetcode_1481 "github.com/phuonganhniie/leetcode/1481"
 
 func main() {
 	// ================ LEETCODE ====================
@@ -80,8 +78,13 @@ func main() {
 	// fmt.Println("Number of palindromic substrings (DP):", result)
 
 	// #2149
-	nums := []int{3, -1, -2, -5, -2, 4}
-	_ = leetcode_2149.RearrangeArray(nums)
+	// nums := []int{3, -1, -2, -5, -2, 4}
+	// _ = leetcode_2149.RearrangeArray(nums)
+
+	// #1481
+	arr := []int{4, 3, 1, 1, 3, 3, 2}
+	k := 3
+	leetcode_1481.FindLeastNumOfUniqueInts(arr, k)
 
 	// Others
 	// arr := []int{1, 2, 3, 4, 5}
