@@ -13,15 +13,15 @@ function findLeastNumOfUniqueInts(arr: number[], k: number): number {
 
   frequencies.sort((a, b) => a - b);
 
-  let leastUniqueInts: number = freqMap.size;
+  let distinctIntegers: number = freqMap.size;
   for (let freq of frequencies) {
     if (k >= freq) {
       k -= freq;
-      leastUniqueInts--;
+      distinctIntegers--;
     } else {
       break;
     }
   }
 
-  return leastUniqueInts;
+  return distinctIntegers;
 }

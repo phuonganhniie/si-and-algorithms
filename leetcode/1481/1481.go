@@ -26,15 +26,15 @@ func FindLeastNumOfUniqueInts(arr []int, k int) int {
 
 	sort.Ints(frequencies)
 
-	leastUniqueInts := len(freqMap)
+	distinctInts := len(freqMap)
 	for _, freq := range frequencies {
 		if k >= freq {
 			k = k - freq
-			leastUniqueInts--
+			distinctInts--
 		} else {
 			break
 		}
 	}
 
-	return leastUniqueInts
+	return distinctInts
 }
