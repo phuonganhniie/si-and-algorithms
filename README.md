@@ -19,7 +19,7 @@ You can use this repository to:
 - Get inspiration for solving different coding challenges.
 - Reference different approaches and algorithms patterns.
 
-And I can use this repository to encourage my try to solve a freaking algorithm (because I really scared when I'm in an algorithm interview). 
+And I can use this repository to encourage my try to solve any freaking algorithm (because I really scared when I'm in an algorithm interview). 
 
 ## License 📝
 MIT
