@@ -1,11 +1,5 @@
 package main
 
-import (
-	"fmt"
-
-	leetcode_787 "github.com/phuonganhniie/leetcode/787"
-)
-
 func main() {
 	// ================ LEETCODE ====================
 	// #1 Valid Parentheses
@@ -91,14 +85,16 @@ func main() {
 	// leetcode_1481.FindLeastNumOfUniqueInts(arr, k)
 
 	// #787
-	n := 4
-	flights := [][]int{{0, 1, 100}, {1, 2, 100}, {2, 0, 100}, {1, 3, 600}, {2, 3, 200}}
-	src := 0
-	dst := 3
-	k := 1
-	fmt.Println("Starting BFS...")
-	cheapestPrice := leetcode_787.FindCheapestPrice(n, flights, src, dst, k)
-	fmt.Printf("Cheapest price: %d\n", cheapestPrice)
+	// n := 4
+	// flights := [][]int{{0, 1, 100}, {1, 2, 100}, {2, 0, 100}, {1, 3, 600}, {2, 3, 200}}
+	// src := 0
+	// dst := 3
+	// k := 1
+	// fmt.Println("Starting BFS...")
+	// cheapestPrice := leetcode_787.FindCheapestPrice(n, flights, src, dst, k)
+	// fmt.Printf("Cheapest price: %d\n", cheapestPrice)
+
+	// #100
 
 	// Others
 	// arr := []int{1, 2, 3, 4, 5}
