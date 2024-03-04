@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+
+	leetcode_2864 "github.com/phuonganhniie/leetcode/2864"
+)
+
 func main() {
 	// ================ LEETCODE ====================
 	// #1 Valid Parentheses
@@ -93,6 +99,10 @@ func main() {
 	// fmt.Println("Starting BFS...")
 	// cheapestPrice := leetcode_787.FindCheapestPrice(n, flights, src, dst, k)
 	// fmt.Printf("Cheapest price: %d\n", cheapestPrice)
+
+	// #2864
+	s := "010"
+	fmt.Println(leetcode_2864.MaximumOddBinaryNumber(s))
 
 	// #100
 
