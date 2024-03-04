@@ -1,10 +1,6 @@
 package main
 
-import (
-	"fmt"
-
-	leetcode_2864 "github.com/phuonganhniie/leetcode/2864"
-)
+import leetcode_977 "github.com/phuonganhniie/leetcode/977"
 
 func main() {
 	// ================ LEETCODE ====================
@@ -101,8 +97,12 @@ func main() {
 	// fmt.Printf("Cheapest price: %d\n", cheapestPrice)
 
 	// #2864
-	s := "010"
-	fmt.Println(leetcode_2864.MaximumOddBinaryNumber(s))
+	// s := "010"
+	// fmt.Println(leetcode_2864.MaximumOddBinaryNumber(s))
+
+	// #977
+	nums := []int{-4, -1, 0, 3, 10}
+	leetcode_977.SortedSquares(nums)
 
 	// #100
 
