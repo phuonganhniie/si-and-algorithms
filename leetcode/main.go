@@ -1,6 +1,8 @@
 package main
 
-import leetcode_977 "github.com/phuonganhniie/leetcode/977"
+import (
+	leetcode_1750 "github.com/phuonganhniie/leetcode/1750"
+)
 
 func main() {
 	// ================ LEETCODE ====================
@@ -101,8 +103,15 @@ func main() {
 	// fmt.Println(leetcode_2864.MaximumOddBinaryNumber(s))
 
 	// #977
-	nums := []int{-4, -1, 0, 3, 10}
-	leetcode_977.SortedSquares(nums)
+	// nums := []int{-4, -1, 0, 3, 10}
+	// leetcode_977.SortedSquares(nums)
+
+	// #1750
+	// s := "bbbbbbbbbbbbbbbbbbbbbbbbbbbabbbbbbbbbbbbbbbccbcbcbccbbabbb"
+	// s := "cabaabac"
+	// s := "aaaaaaaaaaaa"
+	s := "aabccabba"
+	leetcode_1750.MinimumLength(s)
 
 	// #100
 
