@@ -1,8 +1,6 @@
 package main
 
-import (
-	leetcode_1750 "github.com/phuonganhniie/leetcode/1750"
-)
+import leetcode_349 "github.com/phuonganhniie/leetcode/349"
 
 func main() {
 	// ================ LEETCODE ====================
@@ -110,10 +108,13 @@ func main() {
 	// s := "bbbbbbbbbbbbbbbbbbbbbbbbbbbabbbbbbbbbbbbbbbccbcbcbccbbabbb"
 	// s := "cabaabac"
 	// s := "aaaaaaaaaaaa"
-	s := "aabccabba"
-	leetcode_1750.MinimumLength(s)
+	// s := "aabccabba"
+	// leetcode_1750.MinimumLength(s)
 
-	// #100
+	// #349
+	nums1 := []int{4, 9, 5}
+	nums2 := []int{9, 4, 9, 8, 4}
+	leetcode_349.Intersection(nums1, nums2)
 
 	// Others
 	// arr := []int{1, 2, 3, 4, 5}
