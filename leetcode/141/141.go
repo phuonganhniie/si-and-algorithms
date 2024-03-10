@@ -2,7 +2,7 @@ package leetcode_141
 
 /**
  * 141. The Cycle of Linked List
- * https://leetcode.com/problems/linked-list-cycle/submissions/1195412987/?envType=daily-question&envId=2024-03-06
+ * https://leetcode.com/problems/linked-list-cycle/description/?envType=daily-question&envId=2024-03-06
  */
 
 type ListNode struct {
