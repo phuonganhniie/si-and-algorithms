@@ -1,7 +1,5 @@
 package main
 
-import leetcode_349 "github.com/phuonganhniie/leetcode/349"
-
 func main() {
 	// ================ LEETCODE ====================
 	// #1 Valid Parentheses
@@ -112,9 +110,11 @@ func main() {
 	// leetcode_1750.MinimumLength(s)
 
 	// #349
-	nums1 := []int{4, 9, 5}
-	nums2 := []int{9, 4, 9, 8, 4}
-	leetcode_349.Intersection(nums1, nums2)
+	// nums1 := []int{4, 9, 5}
+	// nums2 := []int{9, 4, 9, 8, 4}
+	// leetcode_349.Intersection(nums1, nums2)
+
+	// 1171
 
 	// Others
 	// arr := []int{1, 2, 3, 4, 5}
