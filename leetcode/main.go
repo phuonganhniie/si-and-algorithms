@@ -26,7 +26,7 @@ func main() {
 
 	// #5 Product except self
 	// nums := []int{1, 2, 3, 4}
-	// rs5 := productExceptSelf(nums)
+	// rs5 := leetcode_238.ProductExceptSelf(nums)
 	// fmt.Println(rs5)
 
 	// #6 Minimum String Length After Removing Substrings
@@ -114,7 +114,7 @@ func main() {
 	// nums2 := []int{9, 4, 9, 8, 4}
 	// leetcode_349.Intersection(nums1, nums2)
 
-	// 1171
+	// #1669
 
 	// Others
 	// arr := []int{1, 2, 3, 4, 5}
