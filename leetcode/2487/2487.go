@@ -22,18 +22,31 @@ func RemoveNodes(head *leetcode.ListNode) *leetcode.ListNode {
 }
 
 func reverseLinkedList(head *leetcode.ListNode) *leetcode.ListNode {
-	var reverseList *leetcode.ListNode
-	if head == nil {
+	// Base case:
+	// If the linked list is empty or has only one node,
+	// return the head as it is already reversed.
+	if head == nil || head.Next == nil {
 		return head
 	}
 
-	current := head
-	for current != nil {
-		next := current.Next
-		current.Next = reverseList
-		reverseList = current
-		current = next
-	}
+	// Recursive step:
+	// Reverse the linked list starting
+	// from the second node (head.next).
+	newHead := reverseLinkedList(head.Next)
 
-	return reverseList
+	// Save a reference to the node following
+	// the current 'head' node.
+	front := head.Next
+
+	// Make the 'front' node point to the current
+	// 'head' node in the reversed order.
+	front.Next = head
+
+	// Break the link from the current 'head' node
+	// to the 'front' node to avoid cycles.
+	head.Next = nil
+
+	// Return the 'newHead,' which is the new
+	// head of the reversed linked list.
+	return newHead
 }
