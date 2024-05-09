@@ -16,15 +16,15 @@ func ShipWithinDays(weights []int, days int) int {
 		currentWeight := 0
 
 		for _, weight := range weights {
-			if currentWeight+weight > capacity {
+			currentWeight += weight
+
+			if currentWeight > capacity {
 				shipDays++
 				currentWeight = weight
 
 				if shipDays > days {
 					return false
 				}
-			} else {
-				currentWeight += weight
 			}
 		}
 		return true
