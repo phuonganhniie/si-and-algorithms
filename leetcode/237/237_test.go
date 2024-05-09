@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/phuonganhniie/leetcode"
+	"github.com/phuonganhniie/leetcode/helper"
 )
 
 func TestDeleteNode(t *testing.T) {
@@ -19,10 +19,10 @@ func TestDeleteNode(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		head := leetcode.BuildLinkedList(c.initial)
-		node := leetcode.FindNode(head, c.nodeVal)
+		head := helper.BuildLinkedList(c.initial)
+		node := helper.FindNode(head, c.nodeVal)
 		DeleteNode(node)
-		actual := leetcode.BuildLinkedListToArray(head)
+		actual := helper.BuildLinkedListToArray(head)
 
 		if !reflect.DeepEqual(actual, c.want) {
 			t.Errorf("DeleteNode test case failed. Want %v - Got %v", c.want, actual)

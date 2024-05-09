@@ -1,11 +1,13 @@
 package leetcode_2816
 
-import "github.com/phuonganhniie/leetcode"
+import (
+	"github.com/phuonganhniie/leetcode/helper"
+)
 
-func DoubleIt(head *leetcode.ListNode) *leetcode.ListNode {
-	reverseList := leetcode.ReverseLinkedList(head)
+func DoubleIt(head *helper.ListNode) *helper.ListNode {
+	reverseList := helper.ReverseLinkedList(head)
 
-	prev := &leetcode.ListNode{}
+	prev := &helper.ListNode{}
 	current := reverseList
 	carry := 0
 
@@ -24,15 +26,15 @@ func DoubleIt(head *leetcode.ListNode) *leetcode.ListNode {
 	}
 
 	if carry != 0 {
-		extraNode := &leetcode.ListNode{Val: carry}
+		extraNode := &helper.ListNode{Val: carry}
 		prev.Next = extraNode
 	}
 
-	return leetcode.ReverseLinkedList(reverseList)
+	return helper.ReverseLinkedList(reverseList)
 }
 
-func DoubleItTwoPointers(head *leetcode.ListNode) *leetcode.ListNode {
-	head = &leetcode.ListNode{Next: head}
+func DoubleItTwoPointers(head *helper.ListNode) *helper.ListNode {
+	head = &helper.ListNode{Next: head}
 
 	for current, next := head, head.Next; next != nil; current, next = next, next.Next {
 		next.Val *= 2

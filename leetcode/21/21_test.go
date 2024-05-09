@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/phuonganhniie/leetcode"
+	"github.com/phuonganhniie/leetcode/helper"
 )
 
 func TestMergeTwoLists(t *testing.T) {
@@ -20,10 +20,10 @@ func TestMergeTwoLists(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		list1 := leetcode.BuildLinkedList(c.list1)
-		list2 := leetcode.BuildLinkedList(c.list2)
+		list1 := helper.BuildLinkedList(c.list1)
+		list2 := helper.BuildLinkedList(c.list2)
 		rs := MergeTwoLists(list1, list2)
-		got := leetcode.BuildLinkedListToArray(rs)
+		got := helper.BuildLinkedListToArray(rs)
 		if !reflect.DeepEqual(got, c.want) {
 			t.Errorf("MergeTwoLists test failed, want %v - got %v", c.want, got)
 		}

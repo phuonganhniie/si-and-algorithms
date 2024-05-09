@@ -1,9 +1,11 @@
 package leetcode_21
 
-import "github.com/phuonganhniie/leetcode"
+import (
+	"github.com/phuonganhniie/leetcode/helper"
+)
 
-func MergeTwoLists(list1 *leetcode.ListNode, list2 *leetcode.ListNode) *leetcode.ListNode {
-	mergeList := &leetcode.ListNode{}
+func MergeTwoLists(list1 *helper.ListNode, list2 *helper.ListNode) *helper.ListNode {
+	mergeList := &helper.ListNode{}
 	current := mergeList
 
 	for ; list1 != nil && list2 != nil; current = current.Next {

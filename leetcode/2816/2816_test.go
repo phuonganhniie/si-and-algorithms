@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/phuonganhniie/leetcode"
+	"github.com/phuonganhniie/leetcode/helper"
 )
 
 func TestDoubleIt(t *testing.T) {
@@ -18,9 +18,9 @@ func TestDoubleIt(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		head := leetcode.BuildLinkedList(c.head)
+		head := helper.BuildLinkedList(c.head)
 		rs := DoubleIt(head)
-		got := leetcode.BuildLinkedListToArray(rs)
+		got := helper.BuildLinkedListToArray(rs)
 
 		if !reflect.DeepEqual(c.want, got) {
 			t.Errorf("DoubleIt test failed, want %v - got %v", c.want, got)
@@ -39,9 +39,9 @@ func TestDoubleItTwoPointers(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		head := leetcode.BuildLinkedList(c.head)
+		head := helper.BuildLinkedList(c.head)
 		rs := DoubleItTwoPointers(head)
-		got := leetcode.BuildLinkedListToArray(rs)
+		got := helper.BuildLinkedListToArray(rs)
 
 		if !reflect.DeepEqual(c.want, got) {
 			t.Errorf("DoubleIt test failed, want %v - got %v", c.want, got)

@@ -1,9 +1,11 @@
 package leetcode_2487
 
-import "github.com/phuonganhniie/leetcode"
+import (
+	"github.com/phuonganhniie/leetcode/helper"
+)
 
-func RemoveNodes(head *leetcode.ListNode) *leetcode.ListNode {
-	head = leetcode.ReverseLinkedList(head)
+func RemoveNodes(head *helper.ListNode) *helper.ListNode {
+	head = helper.ReverseLinkedList(head)
 
 	maxVal := head.Val
 	dummy := head
@@ -18,5 +20,5 @@ func RemoveNodes(head *leetcode.ListNode) *leetcode.ListNode {
 		}
 	}
 
-	return leetcode.ReverseLinkedList(head)
+	return helper.ReverseLinkedList(head)
 }

@@ -1,8 +1,10 @@
 package leetcode_237
 
-import "github.com/phuonganhniie/leetcode"
+import (
+	"github.com/phuonganhniie/leetcode/helper"
+)
 
-func DeleteNode(node *leetcode.ListNode) {
+func DeleteNode(node *helper.ListNode) {
 	if node == nil || node.Next == nil {
 		return
 	}
