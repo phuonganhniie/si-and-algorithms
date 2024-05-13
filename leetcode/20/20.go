@@ -1,4 +1,4 @@
-package leetcode
+package leetcode_20
 
 import "fmt"
 
@@ -27,16 +27,4 @@ func IsValid(s string) bool {
 		}
 	}
 	return len(stack) == 0
-}
-
-func ShiftArrayRight(arr []int) {
-	if arr == nil || len(arr) <= 1 {
-		return
-	}
-
-	lastElement := arr[len(arr)-1]
-	for i := len(arr) - 2; i >= 0; i-- {
-		arr[i+1] = arr[i]
-	}
-	arr[0] = lastElement
 }
