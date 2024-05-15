@@ -1,4 +1,4 @@
-package leetcode
+package leetcode_03
 
 func LengthOfLongestSubstring(s string) int {
 	trackingWindow := make(map[byte]int)
