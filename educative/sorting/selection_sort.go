@@ -2,7 +2,7 @@ package sorting
 
 func SelectionSort(arr []int) []int {
 	n := len(arr)
-	min, temp := 0, 0
+	min := 0
 
 	for i := 0; i < n; i++ {
 		min = i
@@ -11,10 +11,7 @@ func SelectionSort(arr []int) []int {
 				min = j
 			}
 		}
-
-		temp = arr[i]
-		arr[i] = arr[min]
-		arr[min] = temp
+		arr[i], arr[min] = arr[min], arr[i]
 	}
 
 	return arr

@@ -1,6 +1,5 @@
 package sorting
 
-// Visualization: https://www.youtube.com/watch?v=8mJ-OhcfpYg&t=373s
 func InsertionSort(arr []int) []int {
 	n := len(arr)
 	var temp int
