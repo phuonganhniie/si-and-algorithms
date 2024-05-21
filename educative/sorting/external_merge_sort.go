@@ -27,12 +27,14 @@ func SplitAndSortChunks(inputFile string) []string {
 		chunk = append(chunk, num)
 
 		if len(chunk) >= chunkSize {
+			sort.Ints(chunk)
 			chunkFiles = append(chunkFiles, WriteChunk(chunk))
 			chunk = []int{}
 		}
 	}
 
 	if len(chunk) > 0 {
+		sort.Ints(chunk)
 		chunkFiles = append(chunkFiles, WriteChunk(chunk))
 	}
 
@@ -40,7 +42,6 @@ func SplitAndSortChunks(inputFile string) []string {
 }
 
 func WriteChunk(chunk []int) string {
-	sort.Ints(chunk)
 	file, err := os.CreateTemp("", "chunk_")
 	if err != nil {
 		fmt.Println("Error creating temp file:", err)
