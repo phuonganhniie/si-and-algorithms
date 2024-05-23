@@ -1,16 +1,17 @@
 package leetcode_392
 
-func IsSubsequence(s string, t string) bool {
-	l1, l2 := 0, 0
+func isSubsequence(s string, t string) bool {
+	ptrStrS := 0
+	ptrStrT := 0
 
-	for l1 < len(s) && l2 < len(t) {
-		if s[l1] == t[l2] {
-			l1++
+	for ptrStrS < len(s) && ptrStrT < len(t) {
+		if s[ptrStrS] == t[ptrStrT] {
+			ptrStrS++
 		}
-		l2++
+		ptrStrT++
 	}
 
-	if l1 == len(s) {
+	if ptrStrS == len(s) {
 		return true
 	}
 	return false

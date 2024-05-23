@@ -15,7 +15,7 @@ func TestIsSubsequence(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		got := IsSubsequence(c.s, c.t)
+		got := isSubsequence(c.s, c.t)
 		if got != c.want {
 			t.Errorf("IsPalindrome test fail, want %v - got %v", c.want, got)
 		}
