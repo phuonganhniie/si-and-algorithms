@@ -1,4 +1,4 @@
-package twopointers
+package fastandslow
 
 import (
 	"github.com/phuonganhniie/leetcode/helper"

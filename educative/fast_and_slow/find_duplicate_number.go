@@ -1,4 +1,4 @@
-package twopointers
+package fastandslow
 
 func findDuplicate(nums []int) int {
 	slow, fast := nums[0], nums[0]
