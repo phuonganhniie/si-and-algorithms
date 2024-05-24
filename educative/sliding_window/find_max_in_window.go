@@ -14,17 +14,18 @@ func findMaxSlidingWindow(nums []int, windowSize int) []int {
 	deque := &helper.Deque{}
 	result := []int{}
 
-	for i := 0; i < len(nums); i++ {
-		fmt.Printf("*** The %d iteration\n", i+1)
-		windowStart := i - windowSize + 1
+	for windowEnd := 0; windowEnd < len(nums); windowEnd++ {
+		fmt.Printf("*** The %d iteration\n", windowEnd+1)
+
+		windowStart := windowEnd - windowSize + 1
 
 		// Print the current window
-		if windowSize-1 <= i {
-			fmt.Printf("Window [%d->%d]: %v\n", windowStart, i, nums[windowStart:i+1])
+		if windowSize-1 <= windowEnd {
+			fmt.Printf("Window [%d->%d]: %v\n", windowStart, windowEnd, nums[windowStart:windowEnd+1])
 		}
 
 		// Remove elements smaller than nums[i]
-		for len(deque.Elements) > 0 && nums[deque.Back()] < nums[i] {
+		for len(deque.Elements) > 0 && nums[deque.Back()] < nums[windowEnd] {
 			deque.Pop()
 		}
 
@@ -33,11 +34,11 @@ func findMaxSlidingWindow(nums []int, windowSize int) []int {
 			deque.PopLeft()
 		}
 
-		// Add current element at the end of the queue
-		deque.Append(i)
+		// Add current element's index at the end of the queue
+		deque.Append(windowEnd)
 
 		// First element in the deque is the maximum of the current window
-		if windowSize-1 <= i {
+		if windowSize-1 <= windowEnd {
 			fmt.Printf("Current indices in deque: %v\n", deque.Elements)
 			result = append(result, nums[deque.Front()])
 			fmt.Printf("Current result: %v\n", result)
