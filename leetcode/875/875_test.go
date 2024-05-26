@@ -8,14 +8,15 @@ func TestMinEatingSpeed(t *testing.T) {
 		limitHour int
 		want      int
 	}{
-		{[]int{3, 6, 7, 100, 1, 1, 1, 1, 1}, 10, 50},
 		{[]int{3, 6, 7, 11}, 8, 4},
+		{[]int{3, 6, 7, 100, 1, 1, 1, 1, 1}, 10, 50},
+		{[]int{312884470}, 968709470, 1},
 		{[]int{30, 11, 23, 4, 20}, 5, 30},
 		{[]int{30, 11, 23, 4, 20}, 6, 23},
 	}
 
 	for _, c := range cases {
-		got := MinEatingSpeed(c.piles, c.limitHour)
+		got := MinEatingSpeedChatGPT(c.piles, c.limitHour)
 		if got != c.want {
 			t.Errorf("MinEatingSpeed test failed, want %d - got %d", c.want, got)
 		}

@@ -2,23 +2,27 @@ package leetcode_881
 
 import "sort"
 
-func NumRescueBoats(people []int, limit int) int {
+func numRescueBoats(people []int, limit int) int {
 	sort.Ints(people)
 
-	var countBoat int
-	l, r := 0, len(people)-1
+	start, end := 0, len(people)-1
+	totalBoats := 0
 
-	for l < r {
-		if people[l]+people[r] <= limit {
-			l++
+	for start < end {
+		totalWeights := people[start] + people[end]
+		if totalWeights <= limit {
+			start++
+			end--
+			totalBoats++
 		}
-		r--
-		countBoat++
+		if totalWeights > limit {
+			end--
+			totalBoats++
+		}
 	}
 
-	if l == r {
-		countBoat++
+	if start == end {
+		totalBoats++
 	}
-
-	return countBoat
+	return totalBoats
 }
