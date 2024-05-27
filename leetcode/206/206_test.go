@@ -3,34 +3,9 @@ package leetcode_206
 import (
 	"reflect"
 	"testing"
+
+	"github.com/phuonganhniie/leetcode/helper"
 )
-
-func createList(nums []int) *ListNode {
-	if len(nums) == 0 {
-		return nil
-	}
-
-	head := &ListNode{Val: nums[0]}
-	current := head
-
-	for _, num := range nums[1:] {
-		current.Next = &ListNode{Val: num}
-		current = current.Next
-	}
-
-	return head
-}
-
-func listToSlice(head *ListNode) []int {
-	var nums []int
-
-	for head != nil {
-		nums = append(nums, head.Val)
-		head = head.Next
-	}
-
-	return nums
-}
 
 func TestReverseList(t *testing.T) {
 	tests := []struct {
@@ -43,10 +18,10 @@ func TestReverseList(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		list := createList(tt.list)
-		got := ReverseList(list)
-		if !reflect.DeepEqual(listToSlice(got), tt.want) {
-			t.Errorf("reverseList = %v, want %v", listToSlice(got), tt.want)
+		head := helper.BuildLinkedList(tt.list)
+		got := ReverseList(head)
+		if !reflect.DeepEqual(helper.BuildLinkedListToArray(got), tt.want) {
+			t.Errorf("reverseList got %v, want %v", helper.BuildLinkedListToArray(got), tt.want)
 		}
 	}
 }
