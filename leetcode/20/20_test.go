@@ -7,13 +7,17 @@ func TestIsValid(t *testing.T) {
 		s    string
 		want bool
 	}{
+		{"(])", false},
+		{")(){}", false},
+		{"){", false},
+		{"(", false},
 		{"()", true},
 		{"()[]{}", true},
 		{"(]", false},
 	}
 
 	for _, tt := range tests {
-		got := IsValid(tt.s)
+		got := isValid(tt.s)
 		if got != tt.want {
 			t.Errorf("IsValid(%s) = %v, want %v", tt.s, got, tt.want)
 		}

@@ -1,29 +1,33 @@
 package leetcode_20
 
-import "fmt"
-
-func IsValid(s string) bool {
-	if len(s) == 0 {
+func isValid(s string) bool {
+	if len(s) <= 1 {
 		return false
 	}
 
-	validChars := map[rune]rune{
-		'{': '}',
+	validParenthesesMap := map[rune]rune{
 		'(': ')',
 		'[': ']',
+		'{': '}',
 	}
 
 	stack := []rune{}
-	for _, r := range s {
-		fmt.Println("rune is: ", r)
-		if _, ok := validChars[r]; ok {
-			stack = append(stack, r)
-		} else if len(stack) == 0 || validChars[stack[len(stack)-1]] != r {
-			fmt.Println("stack in else if: ", validChars[stack[len(stack)-1]])
+	for _, char := range s {
+		if _, exist := validParenthesesMap[char]; exist {
+			stack = append(stack, char)
+			continue
+		}
+
+		if len(stack) == 0 && validParenthesesMap[char] != char {
 			return false
-		} else {
+		}
+
+		if len(stack) > 0 {
+			lastChar := stack[len(stack)-1]
+			if validParenthesesMap[lastChar] != char {
+				break
+			}
 			stack = stack[:len(stack)-1]
-			fmt.Println("stack in else: ", stack)
 		}
 	}
 	return len(stack) == 0
