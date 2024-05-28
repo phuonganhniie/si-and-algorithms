@@ -37,7 +37,7 @@ func equalSubstringBinarySearch(s string, t string, maxCost int) int {
 		mid := start + (end-start)/2
 		if isValidCostLen(mid) {
 			maxLen = mid
-			start = mid + 1 // continue finding valid maximum length
+			start = mid + 1
 		} else {
 			end = mid - 1
 		}
