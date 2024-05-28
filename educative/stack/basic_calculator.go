@@ -5,7 +5,7 @@ import (
 	"unicode"
 )
 
-// TODO: Not my code, retry!!!
+// TODO: Retry!!!
 func calculator(expression string) int {
 	number, signValue, result := 0, 1, 0
 	calculatorStack := make([]int, len(expression))
