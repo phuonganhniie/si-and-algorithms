@@ -3,7 +3,7 @@ go 1.21.3
 use (
 	./codility
 	./contest/fiverr
-	./leetcode
 	./educative
 	./fighting
+	./leetcode
 )
