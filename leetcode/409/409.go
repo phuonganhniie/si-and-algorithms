@@ -27,3 +27,16 @@ func longestPalindrome(s string) int {
 	}
 	return longestPad
 }
+
+// By anh @TuanTuna
+func longestPalindrome2(s string) int {
+	m := make([]int, 26)
+	for _, v := range []byte(s) {
+		m[v-'a']++
+	}
+	ans := 0
+	for _, v := range m {
+		ans = (ans + (v>>1)<<1) | v&1
+	}
+	return ans
+}
