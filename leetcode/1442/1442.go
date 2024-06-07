@@ -1,6 +1,8 @@
 package leetcode_1442
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func countTriplets(arr []int) int {
 	n := len(arr)
