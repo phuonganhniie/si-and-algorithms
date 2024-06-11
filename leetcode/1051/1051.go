@@ -7,10 +7,15 @@ import "sort"
 https://leetcode.com/problems/height-checker/description/
 Created: 2024-06-10
 Done   : 7 mins 19 secs
-Attempt: 1
+Attempt: 3
 ---------------------NOTE---------------------
+Approach: Built-in Sorts
 Time: O(n log n)
 Space: O(n)
+
+Approach: Counting Sort
+Time: O(n)
+Space: O(1)
 */
 func heightChecker(heights []int) int {
 	if len(heights) == 0 {
