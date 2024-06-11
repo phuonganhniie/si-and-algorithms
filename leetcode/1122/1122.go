@@ -11,7 +11,7 @@ Attempt: 2
 ---------------------NOTE---------------------
 Time: O(k + n log n)
 Space: O(k + n)
-Approach:
+Approach: Hashmap + sorting
 */
 func relativeSortArray(arr1 []int, arr2 []int) []int {
 	trackingMap := make(map[int]int)
@@ -42,6 +42,14 @@ func relativeSortArray(arr1 []int, arr2 []int) []int {
 	return result
 }
 
+/*
+Done   : 7 mins 24 seconds
+Attempt: 1
+---------------------NOTE---------------------
+Time: O(k + m + n)
+Space: O(k)
+Approach: Counting Sort
+*/
 func relativeSortArrayCountingSort(arr1 []int, arr2 []int) []int {
 	counting := make([]int, 1001)
 	for _, num := range arr1 {
@@ -62,6 +70,5 @@ func relativeSortArrayCountingSort(arr1 []int, arr2 []int) []int {
 			counting[num]--
 		}
 	}
-
 	return result
 }
