@@ -53,3 +53,31 @@ func heapify(nums []int, n, i int) {
 		heapify(nums, n, largest)
 	}
 }
+
+/*
+Done   : 8 mins 54 seconds
+Attempt: 2
+---------------------NOTE---------------------
+Time    : O(n)
+Space   : O(1)
+Approach: Two (actual three) Pointers (Dutch National Flag algo)
+*/
+func sortColors2(nums []int) []int {
+	low, mid, high := 0, 0, len(nums)-1
+
+	for mid <= high {
+		switch nums[mid] {
+		case 0:
+			nums[low], nums[mid] = nums[mid], nums[low]
+			low++
+			mid++
+		case 1:
+			mid++
+		case 2:
+			nums[mid], nums[high] = nums[high], nums[mid]
+			high--
+		}
+	}
+	result := nums
+	return result
+}
