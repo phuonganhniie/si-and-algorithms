@@ -28,20 +28,20 @@ func SplitAndSortChunks(inputFile string) []string {
 
 		if len(chunk) >= chunkSize {
 			sort.Ints(chunk)
-			chunkFiles = append(chunkFiles, WriteChunk(chunk))
+			chunkFiles = append(chunkFiles, writeChunk(chunk))
 			chunk = []int{}
 		}
 	}
 
 	if len(chunk) > 0 {
 		sort.Ints(chunk)
-		chunkFiles = append(chunkFiles, WriteChunk(chunk))
+		chunkFiles = append(chunkFiles, writeChunk(chunk))
 	}
 
 	return chunkFiles
 }
 
-func WriteChunk(chunk []int) string {
+func writeChunk(chunk []int) string {
 	file, err := os.CreateTemp("", "chunk_")
 	if err != nil {
 		fmt.Println("Error creating temp file:", err)
