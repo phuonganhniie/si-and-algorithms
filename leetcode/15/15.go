@@ -1,44 +1,57 @@
 package leetcode_15
 
-import "sort"
+import (
+	"sort"
+)
 
+/*
+[Medium] 15. 3Sum
+https://leetcode.com/problems/3sum/description/
+Created: 2024-07-11
+Done   : 26 mins 22s
+Attempt: 3
+---------------------NOTE---------------------
+Time: O(n^2)
+Space: O(1)
+Approach: Three pointers + sort
+*/
 func threeSum(nums []int) [][]int {
 	result := [][]int{}
 
-	if len(nums) < 3 {
-		return result
-	}
-
 	sort.Ints(nums)
 
-	for start := 0; start < len(nums)-2; start++ {
-		if start > 0 && nums[start] == nums[start-1] {
+	for i := 0; i < len(nums)-2; i++ {
+		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
 
-		mid, end := start+1, len(nums)-1
-		for mid < end {
-			sum := nums[start] + nums[mid] + nums[end]
-			if sum == 0 {
-				result = append(result, []int{nums[start], nums[mid], nums[end]})
+		start, end := i+1, len(nums)-1
+		for start < end {
+			tempSum := nums[i] + nums[start] + nums[end]
 
-				// skip duplicate elements
-				for mid < end && nums[mid] == nums[mid+1] {
-					mid++
+			if tempSum == 0 {
+				result = append(result, []int{nums[i], nums[start], nums[end]})
+
+				for start < end && nums[start] == nums[start+1] {
+					start++
 				}
-				for mid < end && nums[end] == nums[end-1] {
+				for start < end && nums[end] == nums[end-1] {
 					end--
 				}
-				mid++
+
+				start++
+				end--
+			}
+
+			if tempSum < 0 {
+				start++
+				continue
+			}
+
+			if tempSum > 0 {
 				end--
 				continue
 			}
-
-			if sum < 0 {
-				mid++
-				continue
-			}
-			end--
 		}
 	}
 	return result
