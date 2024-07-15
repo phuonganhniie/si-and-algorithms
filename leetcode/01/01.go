@@ -14,15 +14,14 @@ Space: O(1)
 Approach: HashMap
 */
 func twoSum(nums []int, target int) []int {
-	compareMap := make(map[int]int, 10)
+	m := make(map[int]int)
 
 	for i, num := range nums {
 		complement := target - num
-
-		if mapIndx, found := compareMap[complement]; found {
-			return []int{mapIndx, i}
+		if ordinalNumIdx, exist := m[complement]; exist {
+			return []int{ordinalNumIdx, i}
 		}
-		compareMap[num] = i
+		m[num] = i
 	}
 	return []int{}
 }

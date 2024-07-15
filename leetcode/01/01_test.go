@@ -19,7 +19,7 @@ func TestTwoSum(t *testing.T) {
 
 	countErr := 0
 	for _, tt := range tests {
-		got := twoSum2(tt.nums, tt.target)
+		got := twoSum(tt.nums, tt.target)
 		if !reflect.DeepEqual(got, tt.want) {
 			t.Errorf("twoSum2 test failed, want %v - got %v", tt.want, got)
 			fmt.Println("==================================")
