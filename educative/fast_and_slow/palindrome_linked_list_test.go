@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/phuonganhniie/leetcode/helper"
+	"github.com/phuonganhniie/educative/helper"
 )
 
 func TestPalindrome(t *testing.T) {
@@ -12,8 +12,10 @@ func TestPalindrome(t *testing.T) {
 		nums []int
 		want bool
 	}{
-		{[]int{4, 7, 9, 5, 4}, false},
 		{[]int{3, 4, 5, 6, 5, 4, 3}, true},
+		{[]int{1, 2, 2, 1}, true},
+		{[]int{1, 2}, false},
+		{[]int{4, 7, 9, 5, 4}, false},
 		{[]int{1, 2, 3, 2, 1}, true},
 		{[]int{6, 1, 0, 5, 1, 6}, false},
 		{[]int{1, 2}, false},
