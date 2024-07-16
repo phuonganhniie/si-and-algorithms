@@ -5,7 +5,6 @@ package leetcode_75
 https://leetcode.com/problems/sort-colors/description/
 Created: 2024-06-12
 Done   : 10 mins 41 seconds
-Attempt: 3
 ---------------------NOTE---------------------
 Time    : O(n log n)
 Space   : O(1)
@@ -55,29 +54,29 @@ func heapify(nums []int, n, i int) {
 }
 
 /*
-Done   : 8 mins 54 seconds
-Attempt: 2
+Done   : 25 mins 46 seconds
 ---------------------NOTE---------------------
 Time    : O(n)
 Space   : O(1)
 Approach: Two (actual three) Pointers (Dutch National Flag algo)
 */
 func sortColors2(nums []int) []int {
-	low, mid, high := 0, 0, len(nums)-1
+	start, current, end := 0, 0, len(nums)-1
 
-	for mid <= high {
-		switch nums[mid] {
+	for current <= end {
+		switch nums[current] {
 		case 0:
-			nums[low], nums[mid] = nums[mid], nums[low]
-			low++
-			mid++
+			nums[start], nums[current] = nums[current], nums[start]
+			current++
+			start++
 		case 1:
-			mid++
+			current++
 		case 2:
-			nums[mid], nums[high] = nums[high], nums[mid]
-			high--
+			nums[current], nums[end] = nums[end], nums[current]
+			end--
 		}
 	}
+
 	result := nums
 	return result
 }
