@@ -18,16 +18,16 @@ func maxFrequency(nums []int, k int) int {
 
 	maxFreq := 1
 	start := 0
-	total := 0
+	currentTotal := 0
 	for end := 0; end < len(nums); end++ {
-		total += nums[end]
+		currentTotal += nums[end]
 
 		targetTotal := nums[end] * (end - start + 1)
-		neededIncrements := targetTotal - total
+		neededIncrements := targetTotal - currentTotal
 		for neededIncrements > k {
-			total -= nums[start]
+			currentTotal -= nums[start]
 			start++
-			neededIncrements = nums[end]*(end-start+1) - total
+			neededIncrements = nums[end]*(end-start+1) - currentTotal
 		}
 
 		windowLength := end - start + 1
