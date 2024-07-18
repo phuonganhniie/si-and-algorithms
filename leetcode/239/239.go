@@ -2,9 +2,18 @@ package leetcode_239
 
 import "math"
 
-// time: O(n * k)
-// space: O(k)
-func maxSlidingWindow(nums []int, k int) []int {
+/*
+[Hard] 239. Max Sliding Window
+https://leetcode.com/problems/sliding-window-maximum/description/
+Created: 2024-07-18
+Done   :
+Attempt:
+---------------------NOTE---------------------
+Time: O(N * K)
+Space: O(N)
+Approach: Sliding Window + Queue
+*/
+func maxSlidingWindowNaive(nums []int, k int) []int {
 	result := []int{}
 	for i := 0; i <= len(nums)-k; i++ {
 		currentWindow := nums[i : i+k]
