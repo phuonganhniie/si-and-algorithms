@@ -15,6 +15,7 @@ func TestMaxFrequency(t *testing.T) {
 		{[]int{1, 4, 8, 13}, 5, 2},
 		{[]int{1, 2, 4}, 5, 3},
 		{[]int{3, 9, 6}, 2, 1},
+		{[]int{9, 5, 7, 3, 1}, 4, 2},
 	}
 
 	countErr := 0

@@ -18,19 +18,22 @@ func maxFrequency(nums []int, k int) int {
 
 	maxFreq := 1
 	start := 0
-	prefixSum := 0
+	sum := 0
 
 	for end, num := range nums {
-		prefixSum += num
-		cost := num*(end-start+1) - prefixSum
+		windows := end - start + 1
+		sum += num
+		cost := num*windows - sum
 
 		for cost > k {
-			prefixSum -= nums[start]
+			sum -= nums[start]
 			start++
-			cost = num*(end-start+1) - prefixSum
+			windows = end - start + 1
+			cost = num*windows - sum
 		}
 
-		maxFreq = max(maxFreq, (end - start + 1))
+		windows = end - start + 1
+		maxFreq = max(maxFreq, windows)
 	}
 	return maxFreq
 }
