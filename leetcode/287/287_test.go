@@ -7,6 +7,7 @@ func TestFindDuplicate(t *testing.T) {
 		nums []int
 		want int
 	}{
+		{[]int{2, 5, 9, 6, 9, 3, 8, 9, 7, 1}, 9},
 		{[]int{1, 3, 4, 2, 2}, 2},
 		{[]int{3, 1, 3, 4, 2}, 3},
 		{[]int{3, 3, 3, 3, 3}, 3},

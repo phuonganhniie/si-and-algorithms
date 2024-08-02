@@ -1,9 +1,16 @@
 package leetcode_287
 
+/*
+[Medium] 287. Find the Duplicate Number
+https://leetcode.com/problems/find-the-duplicate-number/description/?envType=daily-question&envId=2024-03-24
+---------------------NOTE---------------------
+Time: O(N)
+Space: O(1)
+Intuition: Fast & slow pointers
+*/
 func FindDuplicate(nums []int) int {
 	var slow, fast = nums[0], nums[0]
 
-	// Phase 1: Finding the intersection point in the cycle
 	for {
 		slow = nums[slow]
 		fast = nums[nums[fast]]
@@ -13,33 +20,20 @@ func FindDuplicate(nums []int) int {
 		}
 	}
 
-	// Phase 2: Finding the entrance to the cycle
-	ptr1 := nums[0]
-	ptr2 := fast
-	for ptr1 != ptr2 {
-		ptr1 = nums[ptr1]
-		ptr2 = nums[ptr2]
+	slow = nums[0]
+	for slow != fast {
+		slow = nums[slow]
+		fast = nums[fast]
 	}
-	return ptr1
+	return slow
 }
 
+/*
+---------------------NOTE---------------------
+Time: O(NLogN)
+Space: O(N)
+Intuition: Binary Search
+*/
 func FindDuplicateBS(nums []int) int {
-	low, high := 1, len(nums)-1
-
-	for low < high {
-		mid := low + (high-low)/2
-		count := 0
-		for _, num := range nums {
-			if num <= mid {
-				count++
-			}
-		}
-
-		if count > mid {
-			high = mid
-		} else {
-			low = mid + 1
-		}
-	}
-	return low
+	return 0
 }
