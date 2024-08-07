@@ -1,26 +1,27 @@
 package leetcode_680
 
 func validPalindrome(s string) bool {
-	slow, high := 0, len(s)-1
-
-	for slow < high {
-		if s[slow] == s[high] {
-			slow++
-			high--
-			continue
+	start, end := 0, len(s)-1
+	for start < end {
+		if s[start] != s[end] {
+			isPalindromeL := checkPalindrome(s, start+1, end)
+			isPalindromeR := checkPalindrome(s, start, end-1)
+			return isPalindromeL || isPalindromeR
+		} else {
+			start++
+			end--
 		}
-		return isPalindrome(s, slow+1, high) || isPalindrome(s, slow, high-1)
 	}
 	return true
 }
 
-func isPalindrome(s string, slow, high int) bool {
-	for slow < high {
-		if s[slow] != s[high] {
+func checkPalindrome(s string, start, end int) bool {
+	for start < end {
+		if s[start] != s[end] {
 			return false
 		}
-		slow++
-		high--
+		start++
+		end--
 	}
 	return true
 }

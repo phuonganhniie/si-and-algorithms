@@ -11,9 +11,9 @@ func TestIsHappy(t *testing.T) {
 		num  int
 		want bool
 	}{
+		{19, true},
 		{2147483646, false},
 		{1, true},
-		{19, true},
 		{8, false},
 		{7, true},
 	}
