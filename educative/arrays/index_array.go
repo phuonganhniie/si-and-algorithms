@@ -20,14 +20,14 @@ func IndexArray2(arr []int, size int) []int {
 		}
 	}
 
-	rs := make([]int, size)
+	result := make([]int, size)
 	for i := 0; i < size; i++ {
 		if existNums[i] {
-			rs[i] = i
+			result[i] = i
 			continue
 		}
-		rs[i] = -1
+		result[i] = -1
 	}
-	copy(arr, rs)
+	copy(arr, result)
 	return arr
 }
