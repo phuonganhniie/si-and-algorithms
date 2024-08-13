@@ -1,8 +1,9 @@
-go 1.21.3
+go 1.22.5
 
 use (
 	./codility
 	./contest/fiverr
+	./contest/leetcode
 	./educative
 	./fighting
 	./leetcode
