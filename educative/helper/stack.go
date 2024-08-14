@@ -1,6 +1,41 @@
-package stack
+package helper
 
-import "fmt"
+type Stack struct {
+	Arr []int
+}
+
+func (s *Stack) IsEmpty() bool {
+	length := len(s.Arr)
+	return length == 0
+}
+
+func (s *Stack) Length() int {
+	length := len(s.Arr)
+	return length
+}
+
+func (s *Stack) Push(value int) {
+	s.Arr = append(s.Arr, value)
+}
+
+func (s *Stack) Pop() int {
+	if s.IsEmpty() == true {
+		return 0
+	}
+	length := len(s.Arr)
+	res := s.Arr[length-1]
+	s.Arr = s.Arr[:length-1]
+	return res
+}
+
+func (s *Stack) Top() int {
+	if s.IsEmpty() == true {
+		return 0
+	}
+	length := len(s.Arr)
+	res := s.Arr[length-1]
+	return res
+}
 
 type Node struct {
 	val  int
@@ -59,14 +94,4 @@ func (s *StackLinkedList) Pop() (int, bool) {
 	s.head = s.head.next
 	s.size--
 	return value, false
-}
-
-/* Print() function will print the elements of the linked list. */
-func (s *StackLinkedList) Print() {
-	temp := s.head
-	for temp != nil {
-		fmt.Print(temp.val, " ")
-		temp = temp.next
-	}
-	return
 }
