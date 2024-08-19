@@ -1,5 +1,7 @@
 package helper
 
+// ====== Stack implemented by Array ======
+
 type Stack struct {
 	Arr []int
 }
@@ -37,13 +39,15 @@ func (s *Stack) Top() int {
 	return res
 }
 
-type Node struct {
+// ====== Stack implemented by Linked List ======
+
+type NodeStack struct {
 	val  int
-	next *Node
+	next *NodeStack
 }
 
 type StackLinkedList struct {
-	head *Node
+	head *NodeStack
 	size int
 }
 
@@ -77,7 +81,7 @@ func (s *StackLinkedList) Peek() (int, bool) {
 
 // Push() function will add new value at the start of the linked list.
 func (s *StackLinkedList) Push(value int) {
-	s.head = &Node{val: value, next: s.head}
+	s.head = &NodeStack{val: value, next: s.head}
 	s.size++
 }
 
