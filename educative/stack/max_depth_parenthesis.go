@@ -2,7 +2,7 @@ package stack
 
 import "github.com/phuonganhniie/educative/helper"
 
-func maxDepthParenthesis(expn string, size int) int {
+func maxDepthParenthesis(expn string) int {
 	var depth, maxDepth int
 	stk := helper.Stack{}
 

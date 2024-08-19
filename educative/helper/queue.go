@@ -13,19 +13,28 @@ func (q *Queue) Enqueue(value interface{}) {
 	if q.size >= capacity {
 		return
 	}
-	q.size++
+
 	q.data[q.back] = value
-	q.back = (q.back + 1) % (capacity - 1)
+
+	q.size++
+
+	q.back = (q.back + 1) % capacity
+
+	return
 }
 
 func (q *Queue) Dequeue() interface{} {
-	var value interface{}
 	if q.size <= 0 {
 		return 0
 	}
+
 	q.size--
+
+	var value interface{}
 	value = q.data[q.front]
-	q.front = (q.front + 1) % (capacity - 1)
+
+	q.front = (q.front + 1) % capacity
+
 	return value
 }
 
