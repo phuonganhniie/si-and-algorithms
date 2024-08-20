@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestSolution(t *testing.T) {
+func TestCyclicRotation(t *testing.T) {
 	tests := []struct {
 		A    []int
 		K    int
@@ -19,9 +19,9 @@ func TestSolution(t *testing.T) {
 
 	countErr := 0
 	for _, tt := range tests {
-		got := Solution(tt.A, tt.K)
+		got := cyclicRotation(tt.A, tt.K)
 		if !reflect.DeepEqual(got, tt.want) {
-			t.Errorf("Solution test failed, want %v - got %v", tt.want, got)
+			t.Errorf("cyclicRotation test failed, want %v - got %v", tt.want, got)
 			fmt.Println("==================================")
 			countErr++
 		}

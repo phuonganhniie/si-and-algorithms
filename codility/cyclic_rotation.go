@@ -1,6 +1,6 @@
 package codility
 
-func Solution(A []int, K int) []int {
+func cyclicRotation(A []int, K int) []int {
 	n := len(A)
 
 	if n == 0 || K == 0 {
