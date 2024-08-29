@@ -12,7 +12,6 @@ func TestProductExceptSelf(t *testing.T) {
 		want []int
 	}{
 		{[]int{1, 2, 3, 4}, []int{24, 12, 8, 6}},
-
 		{[]int{5, 3, -1, 6, 4}, []int{-72, -120, 360, -60, -90}},
 		{[]int{0, -1, 2, -3, 4, -2}, []int{-48, 0, 0, 0, 0, 0}},
 	}
