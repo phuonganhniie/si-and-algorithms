@@ -10,6 +10,7 @@ func TestInsertionSort(t *testing.T) {
 		arr  []int
 		want []int
 	}{
+		{[]int{1, 2, 3, 4, 5, 0}, []int{0, 1, 2, 3, 4, 5}},
 		{[]int{9, 1, 8, 2, 7, 3, 6, 4, 5}, []int{1, 2, 3, 4, 5, 6, 7, 8, 9}},
 	}
 
