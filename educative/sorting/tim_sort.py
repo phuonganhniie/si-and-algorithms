@@ -7,11 +7,11 @@ def insertion_sort(arr, left, right):
         while j >= left and arr[j] > temp: # trường hợp thằng trước lớn hơn thằng sau -> swap
             arr[j+1] = arr[j]
             j -= 1
-        arr[j+1] = temp # trường hợp thằng sau đã lớn hơn thằng trước
+        arr[j+1] = temp # trường hợp thằng sau đã lớn hơn thằng trước -> continue
     
 def merge_sort(arr, left, mid, right): 
     len1, len2 = mid - left + 1, right - mid
-    left_part, right_part = arr[left:mid+1], arr[mid+1:right+1]
+    left_part, right_part = arr[left:mid+1], arr[mid+1:right+1] # galloping mode 
     
     i, j, k = 0, 0, left
     
@@ -44,7 +44,7 @@ def tim_sort(arr):
     # 2. Merge runs
     size = MIN_RUN
     while size < n:
-        for left in range(0, n, 2*size):
+        for left in range(0, n, 2*size): # galloping mode (implement bằng insertion binary search)
             mid = min(n-1, left+size - 1)
             right = min((left + 2 * size - 1), (n - 1))
             if mid < right:
