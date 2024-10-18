@@ -1,6 +1,9 @@
 package leetcode_162
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestFindPeakElement(t *testing.T) {
 	cases := []struct {
@@ -14,10 +17,18 @@ func TestFindPeakElement(t *testing.T) {
 		{[]int{1, 2, 3, 1}, 2},
 	}
 
+	countErr := 0
+
 	for _, c := range cases {
 		got := findPeakElement(c.nums)
 		if got != c.want {
-			t.Errorf("FindPeakElement test failed, want %d - got %d", c.want, got)
+			t.Errorf("findPeakElement test failed, want %v - got %v", c.want, got)
+			fmt.Println("==================================")
+			countErr++
 		}
+	}
+
+	if countErr == 0 {
+		fmt.Println("Chúp mừng pà nkaaaa")
 	}
 }
