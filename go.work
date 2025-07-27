@@ -5,6 +5,5 @@ use (
 	./contest/fiverr
 	./contest/leetcode
 	./educative
-	./fighting
 	./leetcode
 )
