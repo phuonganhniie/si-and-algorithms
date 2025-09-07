@@ -15,3 +15,17 @@ func sumZero(n int) []int {
 
 	return result
 }
+
+func sumZero2(n int) []int{
+	result := make([]int, 0, n)
+
+	// chọn n-1 số liên tiếp từ 1...(n-1)
+	sum := 0
+	for num := 1; num < n; num++ {
+		result = append(result, num)
+		sum += num
+	}
+
+	result = append(result, -sum)
+	return result
+}

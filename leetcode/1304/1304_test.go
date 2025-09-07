@@ -30,7 +30,7 @@ func TestSumZero(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := sumZero(tt.n)
+			result := sumZero2(tt.n)
 			if slices.Equal(result, tt.expected) {
 				t.Errorf("sumZero() = %d, want %d", result, tt.expected)
 			}
