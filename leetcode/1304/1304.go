@@ -16,6 +16,7 @@ func sumZero(n int) []int {
 	return result
 }
 
+// Cách 2: chèn số bù
 func sumZero2(n int) []int{
 	result := make([]int, 0, n)
 
