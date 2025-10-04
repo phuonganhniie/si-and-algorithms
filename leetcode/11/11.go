@@ -1,20 +1,20 @@
 package leetcode_11
 
-func maxArea(height []int) int {
-	low, high := 0, len(height)-1
-	maxContainerArea := 0
+func maxArea(heights []int) int {
+	maxWaterArea := 0
+	leftIndex, rightIndex := 0, len(heights)-1
 
-	for low < high {
-		width := high - low
-		currentHeight := min(height[low], height[high])
-		currentArea := width * currentHeight
-		maxContainerArea = max(maxContainerArea, currentArea)
+	for leftIndex < rightIndex {
+		containerWidth := rightIndex - leftIndex
+		limitingHeight := min(heights[leftIndex], heights[rightIndex])
+		currentWaterArea := containerWidth * limitingHeight
+		maxWaterArea = max(currentWaterArea, maxWaterArea)
 
-		if height[low] < height[high] {
-			low++
+		if heights[leftIndex] <= heights[rightIndex] {
+			leftIndex++
 		} else {
-			high--
+			rightIndex--
 		}
 	}
-	return maxContainerArea
+	return maxWaterArea
 }
