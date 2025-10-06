@@ -1,18 +1,19 @@
 package leetcode_392
 
 func isSubsequence(s string, t string) bool {
-	ptrStrS := 0
-	ptrStrT := 0
+	if len(s) > len(t) {
+		return false
+	}
 
-	for ptrStrS < len(s) && ptrStrT < len(t) {
-		if s[ptrStrS] == t[ptrStrT] {
-			ptrStrS++
+	ptrS, ptrT := 0, 0
+	for ptrS < len(s) && ptrT < len(t) {
+		if s[ptrS] == t[ptrT] {
+			ptrT++
+			ptrS++
+			continue
 		}
-		ptrStrT++
+		ptrT++
 	}
 
-	if ptrStrS == len(s) {
-		return true
-	}
-	return false
+	return len(s) == ptrS
 }
