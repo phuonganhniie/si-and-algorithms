@@ -9,10 +9,7 @@ Welcome to my repository where I share my solutions to various coding challenges
 
 ## Languages Used 💻
 - Go (Golang) 🐹
-- JavaScript 🌐
-- TypeScript 📜
 - Python 🐍
-- Java ☕
 
 ## How to Use 🛠️
 You can use this repository to:
