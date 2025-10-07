@@ -65,12 +65,29 @@ func TestIsSubsequence(t *testing.T) {
 		},
 	}
 
-	for _, tt := range tests {
-		tt := tt
-		t.Run(tt.name, func(t *testing.T) {
-			got := isSubsequence(tt.s, tt.t)
-			if got != tt.expected {
-				t.Errorf("isSubsequence(%q, %q) = %v, expected %v", tt.s, tt.t, got, tt.expected)
+	// Test all approaches
+	approaches := []struct {
+		name string
+		fn   func(string, string) bool
+	}{
+		{"Two Pointer", isSubsequence},
+		{"Binary Search", isSubsequenceBinarySearch},
+		{"Recursive", isSubsequenceRecursive},
+		{"Bit Mask", isSubsequenceBitMask},
+	}
+
+	for _, approach := range approaches {
+		approach := approach
+		t.Run(approach.name, func(t *testing.T) {
+			for _, tt := range tests {
+				tt := tt
+				t.Run(tt.name, func(t *testing.T) {
+					got := approach.fn(tt.s, tt.t)
+					if got != tt.expected {
+						t.Errorf("%s: isSubsequence(%q, %q) = %v, expected %v",
+							approach.name, tt.s, tt.t, got, tt.expected)
+					}
+				})
 			}
 		})
 	}
