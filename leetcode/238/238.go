@@ -1,26 +1,29 @@
 package leetcode_238
 
 func ProductExceptSelf(nums []int) []int {
-	totalLeftProd := make([]int, len(nums))
-	totalRightProd := make([]int, len(nums))
+	leftProductArr := make([]int, len(nums))
+	rightProductArr := make([]int, len(nums))
+	result := make([]int, len(nums))
 
-	totalLeftProd[0] = 1
+	leftProductArr[0] = 1
+	rightProductArr[len(nums)-1] = 1
+
 	for i := 1; i < len(nums); i++ {
-		totalLeftProd[i] = totalLeftProd[i-1] * nums[i-1]
+		leftProductArr[i] = leftProductArr[i-1] * nums[i-1]
 	}
 
-	totalRightProd[len(nums)-1] = 1
 	for i := len(nums) - 2; i >= 0; i-- {
-		totalRightProd[i] = totalRightProd[i+1] * nums[i+1]
+		rightProductArr[i] = rightProductArr[i+1] * nums[i+1]
 	}
 
-	rs := []int{}
-	ptr1, ptr2 := 0, 0
-	for ptr1 < len(totalLeftProd) && ptr2 < len(totalRightProd) {
-		rs = append(rs, totalLeftProd[ptr1]*totalRightProd[ptr2])
-		ptr1++
-		ptr2++
-	}
+	leftPtr, rightPtr := 0, 0
+	for leftPtr < len(leftProductArr) && rightPtr < len(rightProductArr) {
+		numInLeft := leftProductArr[leftPtr]
+		numInRight := rightProductArr[rightPtr]
+		result[leftPtr] = numInLeft * numInRight
 
-	return rs
+		leftPtr++
+		rightPtr++
+	}
+	return result
 }

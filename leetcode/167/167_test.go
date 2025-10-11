@@ -19,7 +19,7 @@ func TestTwoSum(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		got := TwoSum(c.numbers, c.target)
+		got := TwoSumIIBinarySearch(c.numbers, c.target)
 		if !reflect.DeepEqual(c.want, got) {
 			t.Errorf("TwoSum test fail, want %v - got %v", c.want, got)
 		}
