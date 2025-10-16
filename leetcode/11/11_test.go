@@ -17,6 +17,11 @@ func TestMaxArea(t *testing.T) {
 			want:   30, // Area between index 1 and 7: 6 * 5 = 30, or others
 		},
 		{
+			name:   "Descending order",
+			height: []int{5, 4, 3, 2, 1},
+			want:   6, // Area between index 0 (height=5) and index 4 (height=1): 4 * 1 = 4, or index 0 and 3: 3 * 2 = 6
+		},
+		{
 			name:   "Large numbers",
 			height: []int{100, 200, 150, 300, 250},
 			want:   600, // Area between index 1 and 4: 3 * 200 = 600
@@ -40,11 +45,6 @@ func TestMaxArea(t *testing.T) {
 			name:   "Ascending order",
 			height: []int{1, 2, 3, 4, 5},
 			want:   6, // Area between index 0 (height=1) and index 4 (height=5): 4 * 1 = 4, or index 1 and 4: 3 * 2 = 6
-		},
-		{
-			name:   "Descending order",
-			height: []int{5, 4, 3, 2, 1},
-			want:   6, // Area between index 0 (height=5) and index 4 (height=1): 4 * 1 = 4, or index 0 and 3: 3 * 2 = 6
 		},
 		{
 			name:   "High walls at ends",
