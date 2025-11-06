@@ -1,35 +1,35 @@
 package leetcode_33
 
 func search(nums []int, target int) int {
-	start, end := 0, len(nums)-1
-	return searchHandler(nums, target, start, end)
-}
+	left, right := 0, len(nums)-1
 
-func searchHandler(nums []int, target, start, end int) int {
-	if start > end {
-		return -1
-	}
+	for left <= right {
+		mid := left + (right-left)/2
 
-	mid := start + (end-start)/2
-	if nums[mid] == target {
-		return mid
-	}
-
-	if nums[mid] > nums[end] {
-		if target >= nums[start] && target < nums[mid] {
-			end = mid - 1
-			return searchHandler(nums, target, start, end)
-		} else {
-			start = mid + 1
-			return searchHandler(nums, target, start, end)
+		if nums[mid] == target {
+			return mid
 		}
-	} else {
-		if target > nums[mid] && target <= nums[end] {
-			start = mid + 1
-			return searchHandler(nums, target, start, end)
+
+		if nums[left] <= nums[mid] {
+			// -> mang ben trai da duoc sort: nums[left] to nums[mid]
+			if target < nums[mid] && target >= nums[left] {
+				right = mid - 1
+			} else {
+				left = mid + 1
+			}
 		} else {
-			end = mid - 1
-			return searchHandler(nums, target, start, end)
+			// -> mang ben phai da duoc sort: nums[mid] to nums[right]
+			if target > nums[mid] && target <= nums[right] {
+				left = mid + 1
+			} else {
+				right = mid - 1
+			}
 		}
 	}
+
+	if left <= right && nums[left] == nums[right] {
+		return left
+	}
+
+	return -1
 }
